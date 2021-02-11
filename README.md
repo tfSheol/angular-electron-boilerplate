@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
+- [Browser window](https://www.electronjs.org/docs/api/browser-window)
+
 ## Generate electron app with latest Angular version
 
 First update your angular cli to latest version ! Or juste intall it.
