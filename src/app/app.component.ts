@@ -12,6 +12,17 @@ export class AppComponent implements OnInit {
   constructor(private electronService: ElectronService) { }
 
   ngOnInit() {
-
+    if (typeof Worker !== 'undefined') {
+      // Create a new
+      const worker = new Worker('./worker/process.worker', { type: 'module' });
+      worker.onmessage = ({ data }) => {
+        console.log(`page got message: ${data}`);
+        this.title = 'worker work !';
+      };
+      worker.postMessage('hello');
+    } else {
+      // Web workers are not supported in this environment.
+      // You should add a fallback so that your program still executes correctly.
+    }
   }
 }

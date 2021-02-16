@@ -1,8 +1,17 @@
 # ElectronBoilerplate
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
 
 - [Browser window](https://www.electronjs.org/docs/api/browser-window)
+
+```
+# Angular    11.2.0
+# Electron   11.2.3
+# Node       12.18.3
+# Chromium   87.0.4280.141
+```
+
+![app](assets/app.png)
 
 ## Generate electron app with latest Angular version
 
