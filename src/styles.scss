@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+.titlebar, .titlebar {
+    font-family: Segoe WPC, Segoe UI, sans-serif;
+    color: #cccccc !important;
+    font-size: 13px !important;
+}
+
+.menubar-menu-title {
+    line-height: 30px;
+}
+
+.menubar-menu-container {
+    font-family: Segoe WPC, Segoe UI, sans-serif !important;
+}
+
+.menubar-menu-container .action-menu-item {
+    height: 1.9em !important;
+}
+
+.menubar-menu-container .action-menu-item {
+    font-size: 13px !important;
+}
+
+.menubar-menu-container .menu-item-icon {
+    width: 0 !important;
+    margin: 0 !important;
+}

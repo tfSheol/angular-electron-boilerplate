@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     new CustomElectronTitlebar.Titlebar({
       backgroundColor: CustomElectronTitlebar.Color.fromHex('#2f3241'),
       shadow: true,
-      icon: `file://${__dirname}/assets/rocket.png`
+      icon: 'assets/rocket.png'
     });
 
     const replaceText = (selector: any, text: any) => {
