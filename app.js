@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 
-//let appWindow;
+let window = null;
 
 try {
 	require('electron-reloader')(module, {
@@ -8,43 +8,30 @@ try {
     });
 } catch {}
 
-function initWindow() {
-    let appWindow = new BrowserWindow({
+app.on('ready', () => {
+    window = new BrowserWindow({
         width: 1000,
         height: 800,
         webPreferences: {
             preload: `file://${__dirname}/dist/preload.js`,
             enableRemoteModule: true,
-            nodeIntegration: true
+            nodeIntegration: true,
+            webviewTag: true,
+            enableWebSQL: false,
+            nativeWindowOpen: true
         },
         backgroundColor: '#312450',
         frame: false
     });
-
-    appWindow.loadURL(`file://${__dirname}/dist/index.html`);
-
-    appWindow.webContents.openDevTools();
-
-    appWindow.on('closed', () => {
-        appWindow = null;
+    window.setMenuBarVisibility(false);
+    window.loadURL(`file://${__dirname}/dist/index.html`);
+    // window.webContents.openDevTools();
+    window.on('close', () => {
+        app.exit(0);
     });
-
-    // appWindow.on('close', () => {
-    //     e.preventDefault();
-    //     mainWindow.destroy();
-    // })
-}
-
-app.on('ready', initWindow);
-
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+    window.once('closed', () => {
+        window = null;
+    });
 });
 
-app.on('activate', () => {
-    if (win === null) {
-        initWindow();
-    }
-});
+app.on('window-all-closed', () => app.quit());

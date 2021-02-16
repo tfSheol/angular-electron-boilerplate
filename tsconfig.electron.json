@@ -1,0 +1,20 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "outDir": "./pre_dist",
+      "noImplicitAny": true,
+      "importHelpers": false,
+      "preserveConstEnums": true,
+      "forceConsistentCasingInFileNames": true,
+      "esModuleInterop": true,
+      "module": "Classic"
+    },
+    "files": [
+      //"src/mainElectron.ts", convert app.js to app.ts
+      "src/preload.ts"
+    ],
+    "include": [
+      "node_modules/custom-electron-titlebar/**/*.ts",
+      "node_modules/custom-electron-titlebar/**/*.js",
+    ]
+  }

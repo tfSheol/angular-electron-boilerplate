@@ -28,8 +28,7 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/preload.js"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -92,8 +91,7 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/preload.js"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -107,6 +105,7 @@
             "tsConfig": [
               "tsconfig.app.json",
               "tsconfig.spec.json",
+              "tsconfig.electron.json",
               "e2e/tsconfig.json"
             ],
             "exclude": [
