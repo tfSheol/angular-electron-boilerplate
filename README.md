@@ -1,11 +1,12 @@
 # ElectronBoilerplate
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
 - [Browser window](https://www.electronjs.org/docs/api/browser-window)
+- [Angular web worker Lib](https://github.com/gleosmith/angular-web-worker)
 
 ```
-# Angular    11.2.0
+# Angular    11.2.1
 # Electron   11.2.3
 # Node       12.18.3
 # Chromium   87.0.4280.141
@@ -121,6 +122,32 @@ $ npx @electron-forge/cli@latest import
   }
   ...
 }
+```
+
+## Web worker
+
+```bash
+$ cd src/app/worker
+$ ng g angular-web-worker:angular-web-worker
+```
+
+```typescript
+// app.module.ts
+
+import { WorkerModule } from 'angular-web-worker/angular';
+import { AppWorker } from './app.worker';
+
+@NgModule({
+  ...
+  imports: [
+    ...,
+    WorkerModule.forWorkers([
+       {worker: AppWorker, initFn: () => new Worker('./app.worker.ts', {type: 'module'})},
+    ]),
+    ...
+  ],
+})
+export class AppModule { }
 ```
 
 ## Extract content of asar file

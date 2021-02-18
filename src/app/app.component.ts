@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkerClient, WorkerManager } from 'angular-web-worker/angular';
 import { ElectronService } from './core/services/electron/electron.service';
+import { AppWorker } from './worker/app.worker';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +11,18 @@ import { ElectronService } from './core/services/electron/electron.service';
 export class AppComponent implements OnInit {
   title = 'electron-boilerplate';
 
-  constructor(private electronService: ElectronService) { }
+  private client: WorkerClient<AppWorker> = <WorkerClient<AppWorker>>{};
+
+  constructor(private electronService: ElectronService, private workerManager: WorkerManager) { }
 
   ngOnInit() {
-    if (typeof Worker !== 'undefined') {
-      // Create a new
-      const worker = new Worker('./worker/process.worker', { type: 'module' });
-      worker.onmessage = ({ data }) => {
-        console.log(`page got message: ${data}`);
-        this.title = 'worker work !';
-      };
-      worker.postMessage('hello');
+    if (this.workerManager.isBrowserCompatible) {
+      this.client = this.workerManager.createClient(AppWorker);
     } else {
-      // Web workers are not supported in this environment.
-      // You should add a fallback so that your program still executes correctly.
+      // if code won't block UI else implement other fallback behaviour
+      this.client = this.workerManager.createClient(AppWorker, true);
     }
+
+    this.client.connect();
   }
 }

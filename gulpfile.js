@@ -21,7 +21,9 @@ exports.fix_angular_index = () => {
 }
 
 exports.import_node_lib = async () => {
-    let angularCustomModules = ['custom-electron-titlebar'];
+    let angularCustomModules = [
+        'custom-electron-titlebar'
+    ];
 
     fs.mkdirSync('dist/node_modules');
 
@@ -31,12 +33,6 @@ exports.import_node_lib = async () => {
 
         fs.copySync(moduleSrc, moduleDest);
         console.log(`Copied ${moduleSrc} to ${moduleDest}`);
-        // gulp.src(`${moduleSrc}/**/*.js`)
-        //     .pipe(ts({
-        //         noImplicitAny: true,
-        //         sourceMap: false
-        //     }))
-        //     .pipe(gulp.dest(moduleDest));
     });
 }
 
