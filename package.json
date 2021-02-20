@@ -1,9 +1,9 @@
 {
   "name": "electron-boilerplate",
   "productName": "electron-boilerplate",
-  "description": "The latest & updated angular + electron boilerplate with many tweaks !",
+  "description": "The latest and updated angular electron boilerplate with many tweaks",
   "license": "MIT",
-  "author": "Teddy Fontaine <pro@teddyfontaine.fr>",
+  "author": "Teddy Fontaine",
   "version": "11.2.1",
   "main": "app.js",
   "scripts": {
@@ -21,9 +21,9 @@
     "start:electron:hotreload": "concurrently \"ng build --base-href '' --watch \" \"electron-forge start .\"",
     "package": "electron-forge package --arch=x64 --platform=darwin,linux,win32",
     "make": "electron-forge make",
-    "make:mac": "electron-forge make --arch=x64 --plateform darwin",
-    "make:linux": "electron-forge make --arch=x64 --plateform linux",
-    "make:win32": "electron-forge make --arch=x64 --platform win32"
+    "make:mac": "electron-forge make --arch=x64 --plateform=darwin",
+    "make:linux": "electron-forge make --arch=x64 --plateform=linux",
+    "make:win32": "electron-forge make --arch=x64 --platform=win32"
   },
   "private": true,
   "dependencies": {
