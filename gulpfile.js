@@ -13,6 +13,10 @@ exports.build_electron_script = () => {
             .pipe(gulp.dest('dist'));
 }
 
+exports.add_electron_config_file = () => {
+    return fs.copy('electron/config/*.json', 'dist/');
+}
+
 exports.fix_angular_index = () => {
     var anchor = '<app-root></app-root>';
     return gulp.src('dist/index.html')

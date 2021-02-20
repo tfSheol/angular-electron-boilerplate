@@ -1,5 +1,7 @@
 # ElectronBoilerplate
 
+**>> todo <<**
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
 - [Browser window](https://www.electronjs.org/docs/api/browser-window)
@@ -7,7 +9,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ```
 # Angular    11.2.1
+# Material   11.2.1
 # Electron   11.2.3
+# RxDB       9.14.0
 # Node       12.18.3
 # Chromium   87.0.4280.141
 ```
@@ -15,6 +19,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![app](assets/app.png)
 
 ## Generate electron app with latest Angular version
+
+**>> todo <<**
 
 First update your angular cli to latest version ! Or juste intall it.
 
@@ -126,6 +132,8 @@ $ npx @electron-forge/cli@latest import
 
 ## Web worker
 
+**>> todo <<**
+
 ```bash
 $ cd src/app/worker
 $ ng g angular-web-worker:angular-web-worker
@@ -150,32 +158,56 @@ import { AppWorker } from './app.worker';
 export class AppModule { }
 ```
 
-## Extract content of asar file
+## RxDB
+
+**>> todo <<**
+
+```json
+// angular.json
+
+...
+"architect": {
+  "build": {
+    "builder": "@angular-devkit/build-angular:browser",
+    "options": {
+      "allowedCommonJsDependencies": [
+        "deep-equal", "object-path", "@babel/runtime/helpers/wrapNativeSuper",
+        "@babel/runtime/helpers/inheritsLoose", "@babel/runtime/regenerator",
+        "immediate", "object-path"
+      ],
+      ...
+```
+
+## Other stuff
+
+**>> todo <<**
+
+### Extract content of asar file
 
 ```bash
 $ npx asar extract app.asar ./out
 ```
 
-## Development server
+### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

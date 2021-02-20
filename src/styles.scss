@@ -24,5 +24,9 @@
 
 .menubar-menu-container .menu-item-icon {
     width: 0 !important;
-    margin: 0 !important;
+    margin-right: 10px !important;
 }
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

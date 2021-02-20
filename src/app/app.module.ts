@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AppWorker } from './worker/app.worker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,9 @@ import { AppWorker } from './worker/app.worker';
     AppRoutingModule,
     CoreModule,
     WorkerModule.forWorkers([
-      { worker: AppWorker, initFn: () => new Worker('./worker/app.worker.ts', { type: 'module' }) },
+      { worker: AppWorker, initFn: () => new Worker('./worker/app.worker.ts', { type: 'module' }) }
     ]),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

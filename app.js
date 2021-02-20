@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 const projectPackage = require('./package.json');
+let customMenu = require('./dist/menu.js')
 
 let window = null;
 
@@ -21,7 +22,7 @@ function handleSquirrelEvent() {
     // const exeName = path.basename(process.execPath);
     const exeName = path.resolve(path.join(rootAtomFolder, `app-${projectPackage.version}/${projectPackage.productName}.exe`));
 
-    const spawn = function (command, args) {
+    const spawn = (command, args) => {
         let spawnedProcess, error;
 
         try {
@@ -31,7 +32,7 @@ function handleSquirrelEvent() {
         return spawnedProcess;
     };
 
-    const spawnUpdate = function (args) {
+    const spawnUpdate = (args) => {
         return spawn(updateDotExe, args);
     };
 
@@ -102,6 +103,9 @@ app.on('ready', () => {
     window.once('closed', () => {
         window = null;
     });
+
+    customMenu.window = window;
+    Menu.setApplicationMenu(Menu.buildFromTemplate(customMenu.menu));
 });
 
 app.on('window-all-closed', () => app.quit());
