@@ -1,13 +1,21 @@
-# ElectronBoilerplate
+<p align="center">
+  <img src="assets/logo_electron.png" height="160" alt="electron">
+  <img src="assets/logo_angular.svg" height="175" alt="angular">
+  <img src="assets/logo_angular_material.svg" height="140" alt="angular material" style="margin-bottom:12px">
+  <img src="assets/logo_rxdb.svg" height="175" alt="rxdb">
+</p>
 
-**>> todo <<**
+<h3 align="center">Electron Angular Material project boilerplate</h3>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+<p align="center">Create new project with Electron + Angular + Angular Material or simple Angular project</p>
 
-- [Browser window](https://www.electronjs.org/docs/api/browser-window)
-- [Angular web worker Lib](https://github.com/gleosmith/angular-web-worker)
+## About
 
-```
+`tfSheol/angular-electron-boilerplate` is a GitHub template repository for creating a new Electron app with Angular & Angular Material, maintained by @tfSheol.
+
+```json
+// Versions
+
 # Angular    11.2.1
 # Material   11.2.1
 # Electron   11.2.3
@@ -18,7 +26,60 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![app](assets/app.png)
 
-## Generate electron app with latest Angular version
+---
+
+## Repo template
+
+Setup as a starter template, you can easily generate a new GitHub repository. From the repository homepage, click the `Use this template` button.
+
+## What's included
+
+**>> todo <<**
+
+- [Electron](https://www.electronjs.org/)
+- [Angular](https://angular.io/)
+- [Angular material](https://material.angular.io/)
+- [RxDB](https://rxdb.info/)
+- [pouchdb-adapter-idb](https://www.npmjs.com/package/pouchdb-adapter-idb)
+- [angular-web-worker](https://www.npmjs.com/package/angular-web-worker)
+- [custom-electron-titlebar](https://www.npmjs.com/package/custom-electron-titlebar)
+
+## Usage
+
+Be sure to have [Node.js](https://nodejs.org/) installed before proceeding.
+
+```bash
+# Clone the repo
+git clone https://github.com/tfSheol/angular-electron-boilerplate.git
+cd angular-electron-boilerplate
+
+# Install dependencies
+npm install
+
+# Start a local server (uses serve)
+npm run start
+
+npm run build
+npm run build:prod
+
+npm run start:electron
+
+npm run build:dev:electron
+npm run build:prod:electron
+
+npm run make:linux
+npm run make:mac
+npm run make:win32
+
+```
+
+For the developpement you can use `npm run start` and open <http://localhost:3000> to see the page in action.
+
+## Scripts
+
+**>> todo <<**
+
+## Generate electron app with latest Angular version (from scratch or use this repo)
 
 **>> todo <<**
 

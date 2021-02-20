@@ -1,10 +1,10 @@
 {
   "name": "electron-boilerplate",
   "productName": "electron-boilerplate",
-  "description": "juste a little description",
+  "description": "The latest & updated angular + electron boilerplate with many tweaks !",
   "license": "MIT",
-  "author": "Teddy Fontaine",
-  "version": "0.0.0",
+  "author": "Teddy Fontaine <pro@teddyfontaine.fr>",
+  "version": "11.2.1",
   "main": "app.js",
   "scripts": {
     "ng": "ng",
