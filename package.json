@@ -42,7 +42,7 @@
     "@types/systemjs": "^6.1.0",
     "angular-web-worker": "^1.0.6",
     "pouchdb-adapter-idb": "^7.2.2",
-    "rxdb": "^9.19.0",
+    "rxdb": "^15.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "^0.11.4"
